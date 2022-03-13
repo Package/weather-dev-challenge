@@ -9,10 +9,10 @@ interface ForecastComponentProps {
 export const ForecastComponent: FC<ForecastComponentProps> = ({ forecast }) => {
 
 	return (
-		<div className="forecast-container">
+		<div className="forecasts">
 			<h2>Forecast</h2>
 
-			<div className="forecast-grid">
+			<div className="forecasts--grid">
 				{forecast.slice(1).map((forecast, index) => (
 					<div className="forecast" key={forecast.id}>
 						<h3 className="forecast--date">{formatDate(forecast.applicable_date, index)}</h3>

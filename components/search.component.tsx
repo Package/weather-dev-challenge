@@ -17,18 +17,17 @@ export const SearchComponent: FC<SearchComponentProps> = ({ searchToggle, locati
 	}
 
 	return (
-		<div className="search-container">
-			<div className="close-container">
+		<div className="search">
+			<div className="search--close">
 				<button className="rounded" onClick={searchToggle}>
 					<FaTimes />
 				</button>
 			</div>
 
-			<form className="search-form" onSubmit={onSubmit}>
+			<form className="search--form" onSubmit={onSubmit}>
 				<input type="search" required autoFocus placeholder="Enter Location" value={searchTerm} onChange={e => searchFor(e.target.value)} />
 				<button>
 					<FaSearch />
-					Search
 				</button>
 			</form>
 
@@ -37,10 +36,10 @@ export const SearchComponent: FC<SearchComponentProps> = ({ searchToggle, locati
 			)}
 
 			{results.length > 0 && (
-				<div className="search-results">
+				<div className="search--results">
 					<h3>Select Location</h3>
 					{results.map(result => (
-						<div className="search-result" key={result.woeid} onClick={_ => locationSelected(result.woeid)}>
+						<div className="search--results--result" key={result.woeid} onClick={_ => locationSelected(result.woeid)}>
 							<span>
 								{result.title}
 							</span>

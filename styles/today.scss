@@ -1,0 +1,50 @@
+.today {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &--search {
+    padding: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  &--stat {
+    .number {
+        font-size: 9rem;
+    }
+  }
+
+  &--image {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  &--temperature {
+    margin-bottom: 1rem;
+  }
+
+  &--description {
+    color: var(--colour-text-secondary);
+    margin-bottom: 2rem;
+    font-size: 2.25rem;
+  }
+
+  &--meta {
+    justify-content: space-around;
+    color: var(--colour-text-secondary);
+    margin-bottom: 2rem;
+
+    span {
+      margin-right: 1rem;
+    }
+  }
+
+  &--location {
+    color: var(--colour-text-secondary);
+  }
+}

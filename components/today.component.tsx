@@ -11,8 +11,8 @@ interface TodayComponentProps {
 
 export const TodayComponent: FC<TodayComponentProps> = ({ forecast, location, searchToggle }) => {
 	return (
-		<div className="today-container">
-			<div className="today-search">
+		<div className="today">
+			<div className="today--search">
 				<button className="rounded">
 					<FaMapMarkerAlt />
 				</button>
@@ -21,10 +21,10 @@ export const TodayComponent: FC<TodayComponentProps> = ({ forecast, location, se
 				</button>
 			</div>
 
-			<img className="today-image" src={`/images/${forecast.weather_state_abbr}.svg`} alt={forecast.weather_state_name} />
+			<img className="today--image" src={`/images/${forecast.weather_state_abbr}.svg`} alt={forecast.weather_state_name} />
 
-			<div className="today-temperature">
-				<div className="stat">
+			<div className="today--temperature">
+				<div className="today--stat">
 					<span className="number">
 						{forecast.the_temp.toFixed(0)}
 					</span>
@@ -34,17 +34,17 @@ export const TodayComponent: FC<TodayComponentProps> = ({ forecast, location, se
 				</div>
 			</div>
 
-			<div className="today-description">
+			<div className="today--description">
 				{forecast.weather_state_name}
 			</div>
 
-			<div className="today-meta">
+			<div className="today--meta">
 				<span>Today</span>
 				<span>•</span>
 				<span>{formatDate(forecast.applicable_date)}</span>
 			</div>
 
-			<div className="today-location">
+			<div className="today--location">
 				<FaMapMarkerAlt className="icon" />
 				{location}
 			</div>

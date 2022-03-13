@@ -1,0 +1,35 @@
+.highlights {
+  padding: 1rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  &--grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+}
+
+.highlight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--colour-background-secondary);
+  padding: 1rem;
+
+  h4 {
+    font-weight: normal;
+  }
+
+  &--stat {
+    font-size: 2.25rem;
+  }
+
+  &--number {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+}

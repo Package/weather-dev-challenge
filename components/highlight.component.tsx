@@ -7,14 +7,14 @@ interface HighlightComponentProps {
 
 export const HighlightComponent: FC<HighlightComponentProps> = ({ forecast }) => {
 	return (
-		<div className="highlight-container">
+		<div className="highlights">
 			<h2>Today's Highlights</h2>
 
-			<div className="highlight-grid">
+			<div className="highlights--grid">
 				<div className="highlight">
 					<h4>Wind Status</h4>
-					<div className="stat">
-						<span className="number">
+					<div className="highlight--stat">
+						<span className="highlight--number">
 							{forecast.wind_speed.toFixed(0)}
 						</span> mph
 					</div>
@@ -22,8 +22,8 @@ export const HighlightComponent: FC<HighlightComponentProps> = ({ forecast }) =>
 
 				<div className="highlight">
 					<h4>Humidity</h4>
-					<div className="stat">
-						<span className="number">
+					<div className="highlight--stat">
+						<span className="highlight--number">
 							{forecast.humidity.toFixed(0)}
 						</span>%
 					</div>
@@ -31,8 +31,8 @@ export const HighlightComponent: FC<HighlightComponentProps> = ({ forecast }) =>
 
 				<div className="highlight">
 					<h4>Visibility</h4>
-					<div className="stat">
-						<span className="number">
+					<div className="highlight--stat">
+						<span className="highlight--number">
 							{forecast.visibility.toFixed(1)}
 						</span> miles
 					</div>
@@ -40,8 +40,8 @@ export const HighlightComponent: FC<HighlightComponentProps> = ({ forecast }) =>
 
 				<div className="highlight">
 					<h4>Air Pressure</h4>
-					<div className="stat">
-						<span className="number">
+					<div className="highlight--stat">
+						<span className="highlight--number">
 							{forecast.air_pressure.toFixed(0)}
 						</span> mb
 					</div>
