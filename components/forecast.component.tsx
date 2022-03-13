@@ -16,7 +16,7 @@ export const ForecastComponent: FC<ForecastComponentProps> = ({ forecast }) => {
 					<div className="forecast" key={index}>
 						<h3>{forecast.weather_state_name}</h3>
 
-						<img src={`https://www.metaweather.com/static/img/weather/${forecast.weather_state_abbr}.svg`} alt={forecast.weather_state_name} />
+						<img src={`/images/${forecast.weather_state_abbr}.svg`} alt={forecast.weather_state_name} />
 
 						<div className="forecast--temperatures">
 							<span>{forecast.max_temp.toFixed(0)}℃</span>

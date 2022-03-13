@@ -7,7 +7,7 @@ import { HighlightComponent } from '../components/highlight.component';
 import { useWeather } from '../hooks/useWeather';
 
 const WeatherPage = () => {
-	const [searchOpen, setSearchOpen] = useState<boolean>(true);
+	const [searchOpen, setSearchOpen] = useState<boolean>(false);
 	const { result, loading, fetchWeather } = useWeather();
 
 	async function locationSelected(placeId: number) {
@@ -17,16 +17,16 @@ const WeatherPage = () => {
 
 	return (
 		<LayoutComponent title={result?.title} loading={loading}>
-			<div className="left">
+			<aside>
 				{searchOpen &&
 					<SearchComponent searchToggle={() => setSearchOpen(false)} locationSelected={locationSelected} />
 				}
 				{!searchOpen &&
-					<TodayComponent forecast={result.consolidated_weather[0]} location={result.title} searchToggle={() => setSearchOpen(true)} />
+					<TodayComponent searchToggle={() => setSearchOpen(true)} location={result.title} forecast={result.consolidated_weather[0]} />
 				}
-			</div>
+			</aside>
 
-			<div className="right">
+			<main>
 				<ForecastComponent forecast={result.consolidated_weather} />
 
 				<HighlightComponent forecast={result.consolidated_weather[0]} />
@@ -34,7 +34,7 @@ const WeatherPage = () => {
 				<footer>
 					<p>created by <a href="https://github.com/Package">Package</a> - devChallenges.io</p>
 				</footer>
-			</div>
+			</main>
 		</LayoutComponent>
 	)
 }

@@ -54,7 +54,7 @@ footer a {
   height: 100vh;
 }
 
-.left {
+aside {
   display: flex;
   height: 100vh;
   flex-direction: column;
@@ -62,7 +62,7 @@ footer a {
   background-color: var(--colour-background-secondary);
 }
 
-.right {
+main {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -295,7 +295,7 @@ footer a {
   .page-container {
     grid-template-columns: 1fr;
   }
-  .left {
+  aside {
     margin-bottom: 1rem;
   }
   .number {

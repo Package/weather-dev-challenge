@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, useState } from 'react'
+import React, { FC, FormEvent } from 'react'
 import { FaAngleRight, FaSearch, FaTimes } from 'react-icons/fa';
 import { useSearch } from '../hooks/useSearch';
 
@@ -25,7 +25,7 @@ export const SearchComponent: FC<SearchComponentProps> = ({ searchToggle, locati
 			</div>
 
 			<form className="search-form" onSubmit={onSubmit}>
-				<input type="search" required placeholder="Enter Location" value={searchTerm} onChange={e => searchFor(e.target.value)} />
+				<input type="search" required autoFocus placeholder="Enter Location" value={searchTerm} onChange={e => searchFor(e.target.value)} />
 				<button>
 					<FaSearch />
 					Search

@@ -20,7 +20,7 @@ export const TodayComponent: FC<TodayComponentProps> = ({ forecast, location, se
 				</button>
 			</div>
 
-			<img className="today-image" src={`https://www.metaweather.com/static/img/weather/${forecast.weather_state_abbr}.svg`} alt={forecast.weather_state_name} />
+			<img className="today-image" src={`/images/${forecast.weather_state_abbr}.svg`} alt={forecast.weather_state_name} />
 
 			<div className="today-temperature">
 				<div className="stat">
