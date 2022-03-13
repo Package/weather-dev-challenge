@@ -1,8 +1,9 @@
 import React, { FC } from 'react'
 import { Forecast } from '../types'
+import { formatDate } from '../util/date';
 
 interface ForecastComponentProps {
-	forecast: Array<Forecast>;
+	forecast: Forecast[];
 }
 
 export const ForecastComponent: FC<ForecastComponentProps> = ({ forecast }) => {
@@ -13,10 +14,15 @@ export const ForecastComponent: FC<ForecastComponentProps> = ({ forecast }) => {
 
 			<div className="forecast-grid">
 				{forecast.slice(1).map((forecast, index) => (
-					<div className="forecast" key={index}>
-						<h3>{forecast.weather_state_name}</h3>
+					<div className="forecast" key={forecast.id}>
+						<h3 className="forecast--date">{formatDate(forecast.applicable_date, index)}</h3>
 
-						<img src={`/images/${forecast.weather_state_abbr}.svg`} alt={forecast.weather_state_name} />
+						<div className="forecast--description">
+							<img src={`/images/${forecast.weather_state_abbr}.svg`} alt={forecast.weather_state_name} />
+							<span>
+								{forecast.weather_state_name}
+							</span>
+						</div>
 
 						<div className="forecast--temperatures">
 							<span>{forecast.max_temp.toFixed(0)}℃</span>

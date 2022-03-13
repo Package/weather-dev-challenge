@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { Forecast } from '../types';
 import { FaMapMarkerAlt, FaSearch } from "react-icons/fa";
+import { formatDate } from '../util/date';
 
 interface TodayComponentProps {
 	forecast: Forecast;
@@ -40,7 +41,7 @@ export const TodayComponent: FC<TodayComponentProps> = ({ forecast, location, se
 			<div className="today-meta">
 				<span>Today</span>
 				<span>•</span>
-				<span>{forecast.applicable_date}</span>
+				<span>{formatDate(forecast.applicable_date)}</span>
 			</div>
 
 			<div className="today-location">

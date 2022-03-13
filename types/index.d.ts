@@ -1,8 +1,8 @@
 export interface WeatherResult {
 	consolidated_weather: Forecast[];
-	time: Date | string;
-	sun_rise: Date | string;
-	sun_set: Date | string;
+	time: string;
+	sun_rise: string;
+	sun_set: string;
 	timezone_name: string;
 	parent: Parent;
 	sources: any[];
@@ -18,8 +18,8 @@ export interface Forecast {
 	weather_state_name: string;
 	weather_state_abbr: string;
 	wind_direction_compass: string;
-	created: Date | string;
-	applicable_date: Date | string;
+	created: string;
+	applicable_date: string;
 	min_temp: number;
 	max_temp: number;
 	the_temp: number;

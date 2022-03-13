@@ -102,6 +102,17 @@ main {
   background: var(--colour-background-secondary);
   padding: 1rem;
 }
+
+.forecast--description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.forecast--description span {
+  font-size: .9rem;
+  color: var(--colour-text-secondary);
+}
+
 .forecast--temperatures {
   margin-top: 1rem;
   display: flex;
