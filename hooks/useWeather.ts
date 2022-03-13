@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { SAMPLE_WEATHER_RESULT } from "../static-data/sample-forecast";
 import { WeatherResult } from "../types";
 
@@ -10,7 +10,8 @@ interface UseWeatherHook {
 
 export function useWeather(): UseWeatherHook {
 	const [result, setResult] = useState<WeatherResult>(SAMPLE_WEATHER_RESULT);
-	const [loading, setLoading] = useState<boolean>(false);
+	const [loading, setLoading] = useState<boolean>(true);
+	const LONDON_LOCATION = useMemo<number>(() => 44418, []);
 
 	async function fetchWeather(placeId: number) {
 		setLoading(true);
@@ -21,6 +22,10 @@ export function useWeather(): UseWeatherHook {
 		setResult(json);
 		setLoading(false);
 	}
+
+	useEffect(() => {
+		fetchWeather(LONDON_LOCATION);
+	}, []);
 
 	return {
 		result,

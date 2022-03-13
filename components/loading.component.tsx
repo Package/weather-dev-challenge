@@ -3,9 +3,10 @@ import { FaSyncAlt } from 'react-icons/fa'
 
 export const LoadingComponent = () => {
 	return (
-		<div className="loading-container">
-			<span className="loading-inner">
-				<FaSyncAlt /> Loading...
+		<div className="loader">
+			<span className="loader--inner">
+				<FaSyncAlt />
+				Loading...
 			</span>
 		</div>
 	)

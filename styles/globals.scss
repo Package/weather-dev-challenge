@@ -79,15 +79,20 @@ footer a {
 }
 
 /* Loader */
-.loading-container {
+.loader {
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.loading-inner {
-  font-size: 4rem;
+
+  &--inner {
+    font-size: 3rem;
+  }
+
+  svg {
+    margin-right: 1rem;
+  }
 }
 
 /* Forecasts */

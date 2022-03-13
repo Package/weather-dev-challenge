@@ -1,5 +1,6 @@
-/* Tablet */
-@media (max-width: 1100px) {
+
+/* Small Desktop/Laptops */
+@media (max-width: 1024px) {
   .forecasts--grid {
     margin-bottom: 1rem;
     grid-template-columns: repeat(3, 1fr);
@@ -7,21 +8,37 @@
 
   .search--form {
     flex-direction: column;
+
 		input {
-				margin-bottom: 1rem;
+			margin-bottom: 1rem;
+			border: 1px solid var(--colour-text-secondary);
+		}
+
+		button {
+			border-color: #3C47E9;
 		}
   }
 }
-/* Mobile */
-@media (max-width: 700px) {
-	.forecasts--grid {
-    margin-bottom: 1rem;
-    grid-template-columns: repeat(2, 1fr);
-  }
 
+/* Tablet */
+@media (max-width: 768px) {
   .page-container {
     grid-template-columns: 1fr;
   }
+
+  .search--form {
+    flex-direction: row;
+
+    input {
+      margin-bottom: 0;
+      border-right: none;
+    }
+
+    button {
+      border-color: var(--colour-text-primary);
+    }
+  }
+
   aside {
     margin-bottom: 1rem;
   }
@@ -38,5 +55,13 @@
   footer {
     margin: 1rem auto;
 		padding: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .forecasts--grid {
+    margin-bottom: 1rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

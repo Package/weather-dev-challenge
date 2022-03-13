@@ -7,7 +7,7 @@ import { HighlightComponent } from '../components/highlight.component';
 import { useWeather } from '../hooks/useWeather';
 
 const WeatherPage = () => {
-	const [searchOpen, setSearchOpen] = useState<boolean>(true);
+	const [searchOpen, setSearchOpen] = useState<boolean>(false);
 	const { result, loading, fetchWeather } = useWeather();
 
 	async function locationSelected(placeId: number) {
