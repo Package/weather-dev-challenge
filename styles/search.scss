@@ -13,19 +13,19 @@
 
     input {
       background: inherit;
-      padding: 1rem .75rem;
+      padding: 1rem 0.75rem;
       font-size: 1.2rem;
       border: 1px solid var(--colour-text-secondary);
-			border-right: none;
+      border-right: none;
       outline: 0;
       color: var(--colour-text-primary);
       width: 100%;
     }
 
     button {
-      background: #3C47E9;
+      background: #3c47e9;
       padding: 1rem;
-			border: 1px solid var(--colour-text-secondary);
+      border: 1px solid var(--colour-text-secondary);
     }
   }
 
@@ -36,7 +36,7 @@
     flex-direction: column;
 
     &--result {
-      margin: .5rem 0;
+      margin: 0.5rem 0;
       border: 1px solid var(--colour-background-button);
       padding: 1rem;
       width: 100%;
