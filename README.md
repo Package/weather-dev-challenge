@@ -1,10 +1,24 @@
 # Weather Challenge
 
+Challenge: Create a weather app using an API. Use Front-end libraries like React or Vue.
+
+[View Full Challenge](https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv)
+
+## Tech
+* NextJS
+* React
+* TypeScript
+* SCSS
+
+## Deployment
+
+Solution deployed to Vercel. [View Live](https://weather-hazel-app.vercel.app/). API routes as serverless functions.
+
 ## Resources
-* https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv
+* [Dev Challenges](https://devchallenges.io/)
 
-* https://www.figma.com/file/5X3Ao3gEqZPqqKctP7riDF/weather-app?node-id=1%3A2
+* [Figma Design](https://www.figma.com/file/5X3Ao3gEqZPqqKctP7riDF/weather-app?node-id=1%3A2)
 
-* https://www.metaweather.com/api/location/search/?query=London
+* [Weather API - Search](https://www.metaweather.com/api/location/search/?query=London)
 
-* https://www.metaweather.com/api/location/44418/
+* [Weather API - Weather](https://www.metaweather.com/api/location/44418/)
