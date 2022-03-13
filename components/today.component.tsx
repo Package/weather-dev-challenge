@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import { Forecast } from '../types';
 import { FaMapMarkerAlt, FaSearch } from "react-icons/fa";
 
@@ -8,8 +8,7 @@ interface TodayComponentProps {
 	searchToggle: () => void;
 }
 
-const TodayComponent: FC<TodayComponentProps> = ({ forecast, location, searchToggle }) => {
-
+export const TodayComponent: FC<TodayComponentProps> = ({ forecast, location, searchToggle }) => {
 	return (
 		<div className="today-container">
 			<div className="today-search">
@@ -51,5 +50,3 @@ const TodayComponent: FC<TodayComponentProps> = ({ forecast, location, searchTog
 		</div>
 	)
 }
-
-export default TodayComponent;

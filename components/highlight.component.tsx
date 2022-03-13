@@ -5,7 +5,7 @@ interface HighlightComponentProps {
 	forecast: Forecast
 }
 
-const HiglightComponent: FC<HighlightComponentProps> = ({ forecast }) => {
+export const HighlightComponent: FC<HighlightComponentProps> = ({ forecast }) => {
 	return (
 		<div className="highlight-container">
 			<h2>Today's Highlights</h2>
@@ -50,5 +50,3 @@ const HiglightComponent: FC<HighlightComponentProps> = ({ forecast }) => {
 		</div>
 	)
 }
-
-export default HiglightComponent;

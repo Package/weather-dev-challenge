@@ -69,6 +69,18 @@ footer a {
   margin: 0 auto;
 }
 
+/* Loader */
+.loading-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading-inner {
+  font-size: 4rem;
+}
+
 /* Forecasts */
 .forecast-container {
   padding: 1rem;
@@ -215,7 +227,6 @@ footer a {
   width: 100%;
   justify-content: flex-end;
 }
-
 
 .search-form {
   width: 100%;
