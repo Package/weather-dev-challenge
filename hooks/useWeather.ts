@@ -1,38 +1,30 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { SAMPLE_WEATHER_RESULT } from "../static-data/sample-forecast";
-import { Forecast, WeatherResult } from "../types";
+import { WeatherResult } from "../types";
 
 interface UseWeatherHook {
-	result?: WeatherResult;
+	result: WeatherResult;
 	loading: boolean;
+	fetchWeather: (placeId: number) => Promise<void>;
 }
 
 export function useWeather(): UseWeatherHook {
-	const [search, setSearch] = useState<string>("London");
-	const [location, setLocation] = useState<number>(44418);
 	const [result, setResult] = useState<WeatherResult>(SAMPLE_WEATHER_RESULT);
 	const [loading, setLoading] = useState<boolean>(false);
 
-	// useEffect(() => {
-	// 	if (loading) {
-	// 		return;
-	// 	}
+	async function fetchWeather(placeId: number) {
+		setLoading(true);
 
-	// 	setLoading(true);
+		const response = await fetch(`/api/weather?placeId=${placeId}`);
+		const json = await response.json();
 
-	// 	async function fetchWeather() {
-	// 		const response = await fetch(`https://www.metaweather.com/api/location/${location}/`);
-	// 		const data = await response.json();
-
-	// 		setResult(data);
-	// 		setLoading(false);
-	// 	}
-
-	// 	fetchWeather();
-	// }, [location]);
+		setResult(json);
+		setLoading(false);
+	}
 
 	return {
 		result,
-		loading
+		loading,
+		fetchWeather
 	}
 }

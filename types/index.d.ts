@@ -30,3 +30,15 @@ export interface Forecast {
 	visibility: number;
 	predictability: number;
 }
+
+export interface SearchResult {
+	title: string;
+	location_type: string;
+	woeid: number;
+	latt_long: string;
+}
+
+export interface ApiError {
+	status: number;
+	message: string;
+}

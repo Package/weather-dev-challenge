@@ -1,21 +1,23 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { Forecast } from '../types';
 import { FaMapMarkerAlt, FaSearch } from "react-icons/fa";
 
 interface TodayComponentProps {
 	forecast: Forecast;
 	location: string;
+	searchToggle: () => void;
 }
 
-const TodayComponent: FC<TodayComponentProps> = ({ forecast, location }) => {
+const TodayComponent: FC<TodayComponentProps> = ({ forecast, location, searchToggle }) => {
+
 	return (
 		<div className="today-container">
 			<div className="today-search">
 				<button className="rounded">
-					<FaSearch />
-				</button>
-				<button className="rounded">
 					<FaMapMarkerAlt />
+				</button>
+				<button className="rounded" onClick={searchToggle}>
+					<FaSearch />
 				</button>
 			</div>
 

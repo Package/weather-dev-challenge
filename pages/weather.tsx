@@ -1,26 +1,38 @@
 import Head from 'next/head';
-import React from 'react'
+import React, { useState } from 'react'
 import { ForecastComponent } from '../components/forecast.component';
 import HighlightComponent from '../components/highlight.component';
+import { SearchComponent } from '../components/search.component';
 import TodayComponent from '../components/today.component';
 import { useWeather } from '../hooks/useWeather';
 
 const WeatherPage = () => {
-	const { result, loading } = useWeather();
+	const [searchOpen, setSearchOpen] = useState<boolean>(true);
+	const { result, loading, fetchWeather } = useWeather();
 
-	if (loading || !result) {
+	async function locationSelected(placeId: number) {
+		await fetchWeather(placeId);
+		setSearchOpen(false);
+	}
+
+	if (loading) {
 		return <p>Loading...</p>;
 	}
 
 	return (
 		<>
 			<Head>
-				<title>Weather - {result.title}</title>
+				<title>Weather - {result?.title}</title>
 			</Head>
 
 			<div className="page-container">
 				<div className="left">
-					<TodayComponent forecast={result.consolidated_weather[0]} location={result.title} />
+					{searchOpen &&
+						<SearchComponent searchToggle={() => setSearchOpen(false)} locationSelected={locationSelected} />
+					}
+					{!searchOpen &&
+						<TodayComponent forecast={result.consolidated_weather[0]} location={result.title} searchToggle={() => setSearchOpen(true)} />
+					}
 				</div>
 
 				<div className="right">
