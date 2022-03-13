@@ -1,25 +1,19 @@
 import React, { FC, FormEvent, useState } from 'react'
 import { FaAngleRight, FaSearch, FaTimes } from 'react-icons/fa';
-import { SearchResult } from '../types';
+import { useSearch } from '../hooks/useSearch';
 
 interface SearchComponentProps {
 	searchToggle: () => void;
 	locationSelected: (placeId: number) => void;
 }
 
-async function searchPlaces(term: string): Promise<SearchResult[]> {
-	const response = await fetch(`api/search?term=${term}`);
-	return await response.json();
-}
-
 export const SearchComponent: FC<SearchComponentProps> = ({ searchToggle, locationSelected }) => {
-	const [searchTerm, setSearchTerm] = useState<string>("");
-	const [results, setResults] = useState<SearchResult[]>([]);
+	const { results, loading, searchTerm, searchFor, searchPlaces } = useSearch();
 
 	async function onSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 
-		setResults(await searchPlaces(searchTerm));
+		await searchPlaces();
 	}
 
 	return (
@@ -31,12 +25,16 @@ export const SearchComponent: FC<SearchComponentProps> = ({ searchToggle, locati
 			</div>
 
 			<form className="search-form" onSubmit={onSubmit}>
-				<input type="search" required placeholder="Enter Location" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
+				<input type="search" required placeholder="Enter Location" value={searchTerm} onChange={e => searchFor(e.target.value)} />
 				<button>
 					<FaSearch />
 					Search
 				</button>
 			</form>
+
+			{loading && (
+				<p style={{ margin: "1rem auto" }}>Loading...</p>
+			)}
 
 			{results.length > 0 && (
 				<div className="search-results">
